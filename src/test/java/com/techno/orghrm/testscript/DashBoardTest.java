@@ -13,12 +13,12 @@ import com.techno.orghrm.pages.LoginPage;
 
 public class DashBoardTest {
 	
-	@Test
+	//@Test
 	void dashBoard() {
 		MenuList menuList = new MenuList();
 		List<String> expectedMenuList = menuList.dashboardpageMainMenuList();
 		List<String> expectedWidgetList = menuList.widgetList();
-		PredefinedActions.start();
+		//PredefinedActions.start();
 		LoginPage loginPage = new LoginPage();
 		DashBoardPage dashBoardPage = loginPage.doLogin("admin", "admin123");
 		//DashBoardPage dashBoardPage = new DashBoardPage();

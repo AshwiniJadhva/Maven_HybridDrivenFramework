@@ -20,11 +20,11 @@ public class PredefinedActions {
 	static private WebDriverWait wait;
 	
 	
-	static public void start() {
+	 protected void start() {
 		start("admin", "admin123",ConstantPath.URL);
 	}
 	
-	static public void start(String username, String password, String url) {
+	protected void start(String username, String password, String url) {
 		System.setProperty(ConstantPath.CHROMEDRIVER, ConstantPath.CROMEDRIVEREXE);
 		driver = new ChromeDriver();
 		driver.get(url);
