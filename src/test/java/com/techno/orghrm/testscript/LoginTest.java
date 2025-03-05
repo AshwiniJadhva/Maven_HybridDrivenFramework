@@ -1,26 +1,23 @@
 package com.techno.orghrm.testscript;
-
-
-
-
 import java.io.IOException;
 import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+
 import org.testng.annotations.Test;
 
-import com.techno.orghrm.base.PredefinedActions;
+import com.techno.orghrm.base.ItestListenerIml;
 import com.techno.orghrm.constant.ConstantPath;
 import com.techno.orghrm.pages.DashBoardPage;
-//import com.techno.orghrm.pages.HomePage;
 import com.techno.orghrm.pages.LoginPage;
 import com.techno.orghrm.utility.ExcelOperation;
 
-public class LoginTest {
+
+public class LoginTest extends ItestListenerIml{
 	
 	@Test
 	public void loginTest() {
-		PredefinedActions.start();
+		//PredefinedActions.start();
 		LoginPage loginPage = new LoginPage();
 		
 		
@@ -34,12 +31,12 @@ public class LoginTest {
 		
 		List<String>menuList = dashBoardPage.getMenulist();
 		Assert.assertEquals(12, menuList.size(),"some menu are missing");
-		PredefinedActions.tearDown();
+		
 	}
 	
 	//@Test(dataProvider="orghrnLoginDataProvider")
 	public void loginTestwithMultipledata(String username, String password, String expectedResult) {
-		PredefinedActions.start(username, password,ConstantPath.URL);
+		
 		
 		if(expectedResult.equals("pass")) {
 			
@@ -79,7 +76,7 @@ public class LoginTest {
 			}
 			else Assert.assertTrue(false);
 		}
-		//PredefinedActions.tearDown();
+		
 		
 	}
 	@DataProvider(name = "orghrnLoginDataProvider")
